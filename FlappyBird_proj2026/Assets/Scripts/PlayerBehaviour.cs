@@ -1,16 +1,21 @@
+using System;
 using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        print("Hello Giuberto");
-    }
+    [SerializeField] private float jumpForce = 1;
+        private Rigidbody2D rb;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        private void Awake()
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+
+        private void Update()
+        {
+            if (Input.GetButtonDown("Fire1")) 
+            {
+                rb.linearVelocity += Vector2.up*jumpForce;
+            }
+        }
 }

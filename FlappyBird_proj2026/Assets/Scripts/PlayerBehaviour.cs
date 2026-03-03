@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 1;
+    [SerializeField] private float rotationSpeed = 10f;
         private Rigidbody2D rb;
 
         private void Awake()
@@ -15,7 +16,8 @@ public class PlayerBehaviour : MonoBehaviour
         {
             if (Input.GetButtonDown("Fire1")) 
             {
-                rb.linearVelocity += Vector2.up*jumpForce;
+                rb.linearVelocity = Vector2.up*jumpForce;
             }
+            transform.rotation=Quaternion.Euler(0f,0f, rb.linearVelocity.y*rotationSpeed);
         }
 }

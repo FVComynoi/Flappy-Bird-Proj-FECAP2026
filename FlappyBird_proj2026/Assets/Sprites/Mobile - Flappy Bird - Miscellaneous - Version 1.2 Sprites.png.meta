@@ -638,35 +638,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_10
+      name: GetReady
       rect:
         serializedVersion: 2
-        x: 294
-        y: 431
-        width: 34
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 081e4466ed9c6e3b0800000000000000
-      internalID: -5483473539241287296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_11
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 427
-        width: 60
-        height: 27
+        x: 295
+        y: 428
+        width: 92
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2092,10 +2070,10 @@ TextureImporter:
       Flappy-3B: -8191772816379095192
       Flappy-3R: -8403785220595585528
       GameOver: 6341464390685209381
+      GetReady: 3435553997651536362
       Ground: -4561133946181240693
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_1: -5001303908148437828
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_10: -5483473539241287296
-      Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_11: 3435553997651536362
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_13: -58746710848001993
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_14: -3928390806445110986
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_15: 2552331255158829080

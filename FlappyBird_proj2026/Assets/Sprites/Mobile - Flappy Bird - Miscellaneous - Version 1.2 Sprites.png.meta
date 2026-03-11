@@ -902,7 +902,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_27
+      name: TryAgain
       rect:
         serializedVersion: 2
         x: 353
@@ -2088,7 +2088,6 @@ TextureImporter:
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_24: 8851216312826537037
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_25: -2651651994790310619
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_26: -7737797117912235783
-      Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_27: -5448222425035498909
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_28: 2605493221635795637
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_29: -2581669481244740618
       Mobile - Flappy Bird - Miscellaneous - Version 1.2 Sprites_3: 335599229034294550
@@ -2141,6 +2140,7 @@ TextureImporter:
       PipeDown: -9212221691092033360
       PipeUp: -4685103279127582271
       Start: 1044865302
+      TryAgain: -5448222425035498909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -14,12 +14,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-    StartScreen.SetActive(true);
+        if (isStarted==false)
+        {
+        StartScreen.SetActive(true);
+        }
         if (Input.GetButtonDown("Fire1") && isStarted==false)
         {
             StartScreen.SetActive(false);
             isStarted = true;
             Time.timeScale = 1f;
-        }
+        }    
     }
 }

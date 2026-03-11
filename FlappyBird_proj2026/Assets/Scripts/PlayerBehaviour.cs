@@ -1,15 +1,17 @@
 using System;
+using UnityEditor.SearchService;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerBehaviour : MonoBehaviour
 {
+    [SerializeField] private GameObject EndScreen;
     [SerializeField] private float jumpForce = 1;
     [SerializeField] private float rotationSpeed = 10f;
-        private Rigidbody2D rb;
-
+    private Rigidbody2D rb;
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
+            EndScreen.SetActive(false);
         }
 
         private void Update()
@@ -19,5 +21,17 @@ public class PlayerBehaviour : MonoBehaviour
                 rb.linearVelocity = Vector2.up*jumpForce;
             }
             transform.rotation=Quaternion.Euler(0f,0f, rb.linearVelocity.y*rotationSpeed);
+        }
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.CompareTag("Obstacle"))
+            {
+                EndScreen.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
+        public void ReplayGame()
+        {
+        SceneManager.LoadScene("SampleScene");
         }
 }

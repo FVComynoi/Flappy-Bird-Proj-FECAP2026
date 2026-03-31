@@ -4,14 +4,15 @@ using Random = UnityEngine.Random;
 
 public class PipeBehaviour : MonoBehaviour
 {
-    [SerializeField] private float startPos = 0.924f;
-    [SerializeField] private float endPos = -1.011f;
     [SerializeField] private float moveSpeed = 2f;
-    [SerializeField] GameObject PipeParent;
+
+    private void Start()
+    {
+        Destroy(gameObject, 2f);
+    }
 
     void Update()
     {
-        float midPos = Random.Range(0.023f, 0.095f);
         transform.Translate(Vector2.left * moveSpeed * Time.deltaTime);
     }
         /*if (transform.position.x <= endPos)

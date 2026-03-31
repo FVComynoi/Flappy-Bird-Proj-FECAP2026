@@ -2,36 +2,37 @@ using System;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] private GameObject EndScreen;
     [SerializeField] private float jumpForce = 1;
     [SerializeField] private float rotationSpeed = 10f;
     private Rigidbody2D rb;
-        private void Awake()
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        EndScreen.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
         {
-            rb = GetComponent<Rigidbody2D>();
-            EndScreen.SetActive(false);
+            rb.linearVelocity = Vector2.up * jumpForce;
         }
 
-        private void Update()
+        transform.rotation = Quaternion.Euler(0f, 0f, rb.linearVelocity.y * rotationSpeed);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
-            if (Input.GetButtonDown("Fire1")) 
-            {
-                rb.linearVelocity = Vector2.up*jumpForce;
-            }
-            transform.rotation=Quaternion.Euler(0f,0f, rb.linearVelocity.y*rotationSpeed);
+            jumpForce = 0f;
+            GameManager.Instance.GameOver();
         }
-        private void OnCollisionEnter2D(Collision2D collision)
-        {
-            if (collision.gameObject.CompareTag("Obstacle"))
-            {
-                EndScreen.SetActive(true);
-                Time.timeScale = 0f;
-            }
-        }
-        public void ReplayGame()
-        {
-        SceneManager.LoadScene("SampleScene");
-        }
+    }
 }

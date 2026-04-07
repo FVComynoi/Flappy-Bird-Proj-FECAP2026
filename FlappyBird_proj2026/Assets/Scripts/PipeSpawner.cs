@@ -6,7 +6,7 @@ public class PipeSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject pipePrefab;
     [SerializeField] private float spawnRate = 1f; 
-    [SerializeField] float minHeight = -0.341f, maxHeight = 0.597f;
+    [SerializeField] float minHeight = -0.341f, maxHeight = 0.567f;
 
 //private Time pipeLife=new Time();
     //public static void Instantiate()
@@ -19,10 +19,10 @@ public class PipeSpawner : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnRate);
             Vector2 spawnPosition = 
                 new Vector2(transform.position.x, Random.Range(minHeight, maxHeight));
             Instantiate(pipePrefab, spawnPosition, transform.rotation);
+            yield return new WaitForSeconds(spawnRate);
         }
     }
 }

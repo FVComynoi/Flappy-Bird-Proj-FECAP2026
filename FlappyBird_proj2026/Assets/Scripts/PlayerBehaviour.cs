@@ -21,6 +21,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            AudioManager.Instance.PlayFlyingSound();
             rb.linearVelocity = Vector2.up * jumpForce;
         }
 
@@ -31,8 +32,9 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Obstacle"))
         {
-            jumpForce = 0f;
+            AudioManager.Instance.PlayHitSound();
             GameManager.Instance.GameOver();
+            jumpForce = 0f;
         }
     }
 }

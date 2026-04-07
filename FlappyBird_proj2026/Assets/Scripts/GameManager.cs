@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,7 +10,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject StartScreen;
     [SerializeField] private GameObject EndScreen;
     [SerializeField] private Button restartButton;
+    [SerializeField] private TextMeshProUGUI scoreText;
     private bool isStarted = false;
+    [SerializeField] float score = 1;
 
     private void Awake()
     {
@@ -34,9 +37,15 @@ public class GameManager : MonoBehaviour
         }    
     }
 
+    public void AddScore()
+    {
+        scoreText.text = "Score: " + score;
+        score++;
+    }
     public void GameOver()
     {
         EndScreen.SetActive(true);
+        AudioManager.Instance.PlayDieSound();
         Time.timeScale = 0f;
     }
     private void ReplayGame()
